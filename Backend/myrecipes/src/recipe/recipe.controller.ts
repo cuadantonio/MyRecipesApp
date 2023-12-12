@@ -48,6 +48,11 @@ export class RecipeController {
         }
     }
 
+    /*@Get('/:recipeTitle')
+    async getRecipeByTitle(@Param('recipeTitle') recipeTitle: string) {
+        return await this.recipeService.getRecipeByTitle(recipeTitle);
+    }*/
+
     @Delete('/:id')
     async deleteRecipe(@Res() response, @Param('id') recipeId: string) {
         try {

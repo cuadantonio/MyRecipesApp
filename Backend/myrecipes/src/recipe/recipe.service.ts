@@ -41,6 +41,10 @@ export class RecipeService {
         return existingRecipe
     }
 
+    async getRecipeByTitle(recipeTitle): Promise<IRecipe> {
+        return await this.recipeModel.findOne({ title: recipeTitle }).exec()
+    }
+
     async deleteRecipe(recipeId: string): Promise<IRecipe> {
         const deletedRecipe = await this.recipeModel.findByIdAndDelete(recipeId);
         if (!deletedRecipe) {
